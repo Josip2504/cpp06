@@ -5,7 +5,7 @@ SRC = main.cpp ScalarConverter.cpp
 OBJ_DIR = ./obj
 OBJ = $(SRC:%.cpp=$(OBJ_DIR)/%.o)
 
-all: $(NAME) $(OBJ_DIR)
+all: $(OBJ_DIR) $(NAME)
 
 $(NAME): $(OBJ)
 	$(CC) $(CFLAGS) -o $(NAME) $(OBJ)

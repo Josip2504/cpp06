@@ -1,18 +1,11 @@
 #include "ScalarConverter.hpp"
 
-ScalarConverter::ScalarConverter() {}
-
-ScalarConverter::ScalarConverter(ScalarConverter const& other) {
-	*this = other;
-}
-
-ScalarConverter& ScalarConverter::operator=(const ScalarConverter& other) {
-	if (this != &other) {}
-	return (*this);
-}
-
-ScalarConverter::~ScalarConverter() {}
-
-void	ScalarConverter::convert(std::string input) {
-
+int	main(int ac, char *av[])
+{
+	if (ac != 2){
+		std::cout << "Error: 2 arguments only" << std::endl;
+		return 1;
+	}
+	ScalarConverter::convert(av[1]);
+	return 0;
 }

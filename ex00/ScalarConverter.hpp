@@ -1,4 +1,8 @@
 #include <iostream>
+#include <cstdlib>
+#include <cmath>
+#include <limits>
+#include <iomanip>
 
 class ScalarConverter {
 	private:
