@@ -1,4 +1,4 @@
-NAME = main
+NAME = convert
 CFLAGS = -Wall -Werror -Wextra -std=c++17
 CC = c++
 SRC = main.cpp ScalarConverter.cpp
