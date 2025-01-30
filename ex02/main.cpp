@@ -1,10 +1,15 @@
-#include "Functions.hpp"
+#include "Base.hpp"
+#include "A.hpp"
+#include "B.hpp"
+#include "C.hpp"
 
 int main() {
-    Base* ptr = generate();
-    identify(ptr);
-    identify(*ptr);
+	srand(time(0));
 
-    delete ptr;
-    return 0;
+	Base* b = generate();
+	identify(b);
+	identify(*b);
+	delete b;
+	
+	return 0;
 }

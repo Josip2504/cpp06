@@ -1,25 +1,22 @@
-#include <iostream>
 #include "Serializer.hpp"
 
-int main() {
-    Data myData;
-    myData.id = 42;
-    myData.name = "Example Data";
+int	main() {
+	Data	d;
+	d.id = 1;
+	d.name = "test";
 
-    // Serialize the Data object
-    uintptr_t raw = Serializer::serialize(&myData);
+	uintptr_t	p = Serilazer::serialize(&d);
+	Data*		ptr = Serilazer::deserialize(p);
 
-    // Deserialize the uintptr_t back to a Data pointer
-    Data* ptr = Serializer::deserialize(raw);
+	if (&d == ptr) {
+		std::cout << "Successful Serilazer" << std::endl;
+		std::cout << "Data id: " << d.id << std::endl;
+		std::cout << "Ptr id: " << ptr->id << std::endl;
+		std::cout << "Data name: " << d.name << std::endl;
+		std::cout << "Ptr name: " << ptr->name << std::endl;
+	} else {
+		std::cout << "Serilazer failed" << std::endl;
+	}
 
-    // Verify that the deserialized pointer points to the original Data object
-    if (ptr == &myData) {
-        std::cout << "Serialization and deserialization successful!" << std::endl;
-        std::cout << "Data ID: " << ptr->id << std::endl;
-        std::cout << "Data Name: " << ptr->name << std::endl;
-    } else {
-        std::cout << "Serialization and deserialization failed!" << std::endl;
-    }
-
-    return 0;
+	return 0;
 }
